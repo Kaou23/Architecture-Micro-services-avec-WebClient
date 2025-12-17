@@ -1,0 +1,19 @@
+server:
+  port: 8082 # Port différent du client (8081)
+
+spring:
+  application:
+    name: SERVICE-CAR
+  datasource:
+    url: jdbc:mysql://localhost:3306/carservicedb?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

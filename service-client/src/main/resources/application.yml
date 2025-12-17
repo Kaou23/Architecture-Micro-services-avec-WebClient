@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: SERVICE-CLIENT  # Très important : c'est le nom utilisé par Eureka
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Remplace 'root' et le password par les tiens si nécessaire
+    url: jdbc:mysql://localhost:3306/clientservicedb?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update # Crée la table automatiquement
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
